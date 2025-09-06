@@ -8,6 +8,8 @@ public class V1MvcApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(V1MvcApplication.class, args);
+
+		System.out.println("La aplicacion se inició correctamente");
 	}
 
 }
