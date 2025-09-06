@@ -1,84 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>SpeedRoller - Tienda de Patines</title>
+    <title>Roller Speed</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">SpeedRoller</a>
+            <a class="navbar-brand" th:href="@{/}">Roller Speed</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Misión</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Visión</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Valores</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Eventos de la escuela</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" th:href="@{/}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/mision}">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/vision}">Visión</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/valores}">Valores</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/servicios}">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/eventos}">Eventos de la escuela</a></li>
+                    <li class="nav-item"><a class="nav-link" th:href="@{/contacto}">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <header class="bg-primary text-white text-center py-5">
-        <h1>Bienvenido a SpeedRoller</h1>
-        <p>Tu tienda especializada en patines y accesorios</p>
-        <a href="#" class="btn btn-light btn-lg mt-3">Ver catálogo</a>
+        <h1>Bienvenido a Roller Speed</h1>
+        <p>Escuela especializada en patinaje para personas de todas las edades</p>
+        <a th:href="@{/catalogo}" class="btn btn-light btn-lg mt-3">Ver catálogo</a>
     </header>
     <main class="container my-5">
         <section>
-            <h2 class="mb-4">Nuestros Patines Destacados</h2>
+            <h2 class="mb-4">Clases Destacadas:</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Patín profesional">
-                        <div class="card-body">
-                            <h5 class="card-title">Patín Profesional</h5>
-                            <p class="card-text">Ideal para velocidad y competición. Diseño ergonómico y materiales de alta calidad.</p>
-                            <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Patín recreativo">
-                        <div class="card-body">
-                            <h5 class="card-title">Patín Recreativo</h5>
-                            <p class="card-text">Perfecto para paseos y diversión. Cómodo y seguro para todas las edades.</p>
-                            <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Patín infantil">
-                        <div class="card-body">
-                            <h5 class="card-title">Patín Infantil</h5>
-                            <p class="card-text">Especialmente diseñado para niños, con máxima seguridad y colores divertidos.</p>
-                            <a href="#" class="btn btn-primary">Ver más</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Tarjeta 1: Patines para niños -->
+    <div class="col-md-4">
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1369665569/es/vector/pat%C3%ADn-abstracto-para-patinaje-art%C3%ADstico-quad-skate-de-pinturas-multicolores.jpg?s=612x612&w=0&k=20&c=vyReDtK_c5JKcn_9YS9hl11aOgis5HV2oNh_U_RtjkY=" class="card-img-top" alt="Patines para niños">
+            <div class="card-body">
+                <h5 class="card-title">Patines para Niños</h5>
+                <p class="card-text">Patines seguros y coloridos para los más pequeños, ideales para aprender.</p>
+                <a th:href="@{/servicios}" class="btn btn-primary">Ver más</a>
             </div>
+        </div>
+    </div>
+    <!-- Tarjeta 2: Patines profesionales -->
+    <div class="col-md-4">
+        <div class="card">
+            <img src="https://i.pinimg.com/474x/21/69/f4/2169f48b3bf8e7d89e7ca2c8b0788829.jpg" class="card-img-top" alt="Patines profesionales">
+            <div class="card-body">
+                <h5 class="card-title">Patines Profesionales</h5>
+                <p class="card-text">Patines de alta gama para velocidad y competición, usados por expertos.</p>
+                <a th:href="@{/servicios}" class="btn btn-primary">Ver más</a>
+            </div>
+        </div>
+    </div>
+    <!-- Tarjeta 3: Patines recreativos -->
+    <div class="col-md-4">
+        <div class="card">
+            <img src="https://www.rollerblade.com/assets/img/born.jpg" class="card-img-top" alt="Patines recreativos">
+            <div class="card-body">
+                <h5 class="card-title">Patines Recreativos</h5>
+                <p class="card-text">Perfectos para paseos y actividades recreativas en familia o amigos.</p>
+                <a th:href="@{/eventos}" class="btn btn-primary">Ver más</a>
+            </div>
+        </div>
+    </div>
+</div>
+
         </section>
         <section class="mt-5">
             <h2>¿Por qué elegirnos?</h2>
             <ul>
-                <li>Asesoría personalizada</li>
-                <li>Envíos a todo el país</li>
-                <li>Variedad de marcas y modelos</li>
-                <li>Garantía en todos nuestros productos</li>
+                <li>Instructores certificados y apasionados</li>
+                <li>Clases para todas las edades y niveles</li>
             </ul>
         </section>
     </main>
     <footer class="bg-dark text-white text-center py-3">
-        &copy; 2025 SpeedRoller. Todos los derechos reservados.
+        &copy; 2025 Roller Speed. Todos los derechos reservados.*Santa Marta -Colombia*
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
