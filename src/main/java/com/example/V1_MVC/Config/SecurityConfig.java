@@ -49,28 +49,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(csrf -> csrf.disable()) // 🔴 CSRF deshabilitado para Postman
+                .csrf(csrf -> csrf.disable()) // 🔓 Desactiva CSRF
                 .authorizeHttpRequests(auth -> auth
-                        // 👉 Endpoints abiertos (no piden login)
-                        .requestMatchers(
-                                "/api/**",        // 🔓 Todo lo de API libre (para Postman)
-                                "/login",
-                                "/doc",
-                                "/swagger-ui/**",
-                                "/v3/api-docs/**",
-                                "/",
-                                "/css/**",
-                                "/js/**",
-                                "/images/**"
-                        ).permitAll()
-                        // 👉 El resto requiere autenticación
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll() // 🔓 Permite TODO
                 )
-                .formLogin(form -> form
-                        .loginPage("/login").permitAll()
-                        .defaultSuccessUrl("/", true)
-                )
-                .logout(logout -> logout.permitAll())
                 .build();
     }
 }
+

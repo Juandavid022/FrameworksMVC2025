@@ -8,13 +8,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-
 import java.util.List;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "users", description = "Operaciones sobre el manejo y recursos de los usuarios")
-@RestController   // 👈 Esto es importante para Postman
-@RequestMapping("/api/users")  // 👈 Ruta separada para APIs
+@RestController
+@RequestMapping("/api/users")
 @CrossOrigin(origins = "*")
 public class UserController {
 
@@ -23,13 +22,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // ✅ Listar todos los usuarios
+    
     @GetMapping("/listar")
     public List<UserModel> listar() {
         return userRepository.findAll();
     }
 
-    // ✅ Buscar un usuario por ID
+    
     @GetMapping("/{id}")
     public ResponseEntity<UserModel> obtenerUsuario(@PathVariable Long id) {
         UserModel usuario = userService.listarId(id);
@@ -41,20 +40,19 @@ public class UserController {
 
 
 
-    // ✅ Guardar un usuario
     @PostMapping("/guardar")
     public UserModel guardarUsuario(@RequestBody UserModel user) {
         return userRepository.save(user);
     }
 
-    // ✅ Eliminar usuario por ID
+    
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<UserModel> eliminarUsuario(@PathVariable Long id) {
          UserModel usuario = userService.listarId(id);
         if (usuario == null) {
             return ResponseEntity.notFound().build();
         }
-        userService.deleteUserById(id);
+        userService.deleteById(id);
         return ResponseEntity.ok(usuario);
     }
 }
