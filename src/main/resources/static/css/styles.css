@@ -1,9 +1,231 @@
-.card-img-top {
-    object-fit: cover;
-    height: 200px;
-    width: 100%;
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #d7dbdf;
+    color: #2C2C2C;
+    margin: 0;
+    padding-top: 80px; /* ajusta según altura de tu navbar */
+    line-height: 1.7;
 }
 
-.fuente-bonita {
-font-family: 'Pacifico', cursive;
+h1, h2, h3 {
+    font-family: 'Racing Sans One', sans-serif;
+    font-weight: 750;
+    color: #442270;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header {
+    background: linear-gradient(135deg, #91a1fc, #4C6EF5);
+    color: rgb(197, 43, 43);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background-color: #FF4C60;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #4C6EF5;
+    color: #fff;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 5px solid #FF4C60;
+}
+
+footer {
+    background-color: #2C2C2C;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo personalizado para lista de valores */
+.list-group.list-group-flush {
+    background-color: transparent;
+    border-radius: 12px;
+    padding-left: 0;
+}
+
+.list-group-item {
+    background-color: #e9e9e9;
+    border: none;
+    border-left: 5px solid #FF4C60;
+    margin-bottom: 12px;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(5px);
+    background-color: #f0f4ff;
+}
+/* Imágenes de la sección misión/visión */
+.mision-vision-img {
+    width: 100%;
+    height: 350px;   /* ajusta la altura que prefieras */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.mision-vision-img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ================================
+   NAVBAR PERSONALIZADO
+================================ */
+.custom-navbar {
+    background: linear-gradient(135deg, #8a96da, #1b36a1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    padding: 15px 0;
+    transition: background 0.4s ease-in-out;
+}
+
+/* LOGO */
+.navbar-brand {
+    font-family: 'Racing Sans One', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+.brand-highlight {
+    color: #442270; /* resalta "Roller" */
+}
+
+/* LINKS */
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    margin-left: 20px;
+    position: relative;
+    padding: 8px 14px;
+    transition: all 0.3s ease;
+}
+
+/* EFECTO DE SUBRAYADO DINÁMICO */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: #FF4C60;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+.nav-link:hover {
+    color: #FF4C60 !important;
+    transform: translateY(-3px);
+}
+
+/* ACTIVO */
+.nav-link.active {
+    color: #FF4C60 !important;
+}
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* Navbar fija con efecto scroll */
+.custom-navbar.fixed-top {
+    transition: all 0.4s ease;
+}
+.custom-navbar.scrolled {
+    background: #4C6EF5;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* ================================
+   FOOTER PERSONALIZADO
+================================ */
+footer {
+    background: linear-gradient(135deg, #2C2C2C, #1a1a1a);
+    color: #f1f1f1;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.95rem;
+    position: relative;
+    margin-top: auto;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación sutil al pasar el mouse */
+footer:hover {
+    background: linear-gradient(135deg, #1f1f1f, #000000);
+    transform: translateY(-3px);
+}
+
+/* Texto principal */
+footer p {
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Texto pequeño */
+footer small {
+    display: block;
+    margin-top: 5px;
+    color: #bbb;
+    font-size: 0.85rem;
+}
+
+/* Efecto animado en el copyright */
+footer p::after {
+    content: " ⚡";
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+footer:hover p::after {
+    opacity: 1;
 }
