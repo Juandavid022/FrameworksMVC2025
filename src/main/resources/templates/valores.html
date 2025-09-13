@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Valores | Roller Speed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar fragment -->
+    <div th:replace="fragments/navbar :: navbar"></div> 
+
+    <!-- Encabezado -->
+    <header class="bg-primary text-white text-center py-5">
+        <h1 style="font-family: 'Playfair Display', serif;">Nuestros Valores</h1>
+        <h3 class="titulo-elegante">
+            La base que guía cada paso, cada rueda y cada logro en Roller Speed.
+        </h3>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+        <section class="mb-4">
+            <p class="fs-5">
+                En Roller Speed, nuestros valores son el motor que impulsa nuestra comunidad. Cada clase, cada entrenamiento y cada evento
+                está guiado por principios que fortalecen el carácter y el espíritu deportivo de nuestros estudiantes.
+            </p>
+        </section>
+
+        <section>
+            <ul class="list-group list-group-flush fs-5">
+                <li class="list-group-item">🏅 <strong>Disciplina:</strong> Constancia y esfuerzo en cada práctica.</li>
+                <li class="list-group-item">🤝 <strong>Respeto:</strong> Valoramos a cada persona y fomentamos la empatía.</li>
+                <li class="list-group-item">💪 <strong>Perseverancia:</strong> Superamos obstáculos con determinación.</li>
+                <li class="list-group-item">🌟 <strong>Pasión:</strong> Amamos lo que hacemos y lo compartimos con entusiasmo.</li>
+                <li class="list-group-item">👥 <strong>Trabajo en equipo:</strong> Juntos llegamos más lejos.</li>
+            </ul>
+        </section>
+
+        <section class="mt-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <img th:src="@{/images/valores1.jpg}" class="img-fluid rounded" alt="Valores en acción">
+                </div>
+                <div class="col-md-6">
+                    <img th:src="@{/images/valores2.jpg}" class="img-fluid rounded" alt="Trabajo en equipo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer fragment -->
+    <div th:replace="fragments/footer :: footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
