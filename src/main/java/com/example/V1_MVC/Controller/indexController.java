@@ -28,4 +28,9 @@ public class indexController {
     public String valores() {
         return "valores"; // Esto carga mision.html desde templates
     }
+     
+    @GetMapping("servicios")
+    public String servicios() {
+        return "servicios"; // Esto carga mision.html desde templates
+    }
 }
