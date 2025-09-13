@@ -12,5 +12,20 @@ public class indexController {
     public String index() {
         return "index";
     }
+
     
+    @GetMapping("mision")
+    public String mision() {
+        return "mision"; // Esto carga mision.html desde templates
+    }
+
+    @GetMapping("vision")
+    public String vision() {
+        return "vision"; // Esto carga mision.html desde templates
+    }
+    
+     @GetMapping("valores")
+    public String valores() {
+        return "valores"; // Esto carga mision.html desde templates
+    }
 }
