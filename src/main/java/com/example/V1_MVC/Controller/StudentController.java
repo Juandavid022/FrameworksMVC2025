@@ -32,9 +32,9 @@ public class StudentController {
     @PostMapping("/save")
     public String guardar(@ModelAttribute StudentModel student) {
         studentService.save(student);
-        return "redirect:/index";
+        return "redirect:/students/list";
     }
-
+    
     @GetMapping("/list")
     public String listar(Model model) {
         model.addAttribute("student", studentService.listar());
