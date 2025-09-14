@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService  {
@@ -35,11 +35,11 @@ public class UserServiceImpl implements UserService, UserDetailsService  {
     }
 
     @Override
-    public void deleteUserById(Long id) {
+    public void deleteById(Long id) {
         userRepository.deleteById(id);
     }
 
-    // 🔑 Aquí cargas el usuario para Spring Security
+    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserModel user = userRepository.findByUsername(username)
@@ -48,38 +48,7 @@ public class UserServiceImpl implements UserService, UserDetailsService  {
         return new User(
                 user.getUsername(),
                 user.getPassword(),
-                Collections.emptyList() // 👈 Aquí podrías meter roles más adelante
+                Collections.emptyList() 
         );
     }
-
-    @Override
-    public List<UserModel> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
-    }
-
-    @Override
-    public Optional<UserModel> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
-
-    @Override
-    public UserModel save(UserModel usuario) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
-    }
-
-    @Override
-    public Optional<UserModel> findUserByUsername(String username) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findUserByUsername'");
-    }
-
 }

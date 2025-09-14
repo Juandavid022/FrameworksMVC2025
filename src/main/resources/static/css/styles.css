@@ -229,3 +229,81 @@ footer p::after {
 footer:hover p::after {
     opacity: 1;
 }
+
+
+/* ================================
+   FORMULARIOS DE REGISTRO
+================================ */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.form-card .card-header {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1.2rem;
+    border-bottom: none;
+    border-radius: 20px 20px 0 0;
+    letter-spacing: 1px;
+}
+
+.form-card .card-body {
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #442270;
+}
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #FF4C60;
+    box-shadow: 0 0 8px rgba(255, 76, 96, 0.3);
+}
+
+.btn-primary {
+    background: #FF4C60;
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #442270;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    border-radius: 12px;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 1rem;
+}
