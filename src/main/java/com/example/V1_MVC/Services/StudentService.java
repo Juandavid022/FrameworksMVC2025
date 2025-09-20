@@ -10,6 +10,7 @@ public interface StudentService {
     void deleteById(Long id);
     StudentModel listarId(Long id);
     StudentModel save(StudentModel student);
-    List<StudentModel> listar();    
+    List<StudentModel> listar(); 
+    StudentModel findByEmail(String email);   
     
 }

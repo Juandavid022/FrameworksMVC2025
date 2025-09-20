@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard Alumno</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/css/estilos.css" />
+    <!-- Tu CSS personalizado -->
+    <style>
+      body {
+        background: #f5f6fa;
+      }
+      .profile-panel {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .profile-panel h4 {
+        color: #442270;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      .profile-panel p {
+        color: #2c2c2c;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .classes-table {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        padding: 15px;
+      }
+      .classes-table th,
+      .classes-table td {
+        vertical-align: middle;
+      }
+      .agenda-panel {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        padding: 15px;
+        height: 100%;
+      }
+      .card-title {
+        color: #442270;
+        font-weight: 700;
+      }
+      .btn-primary {
+        background-color: #442270;
+        border-color: #442270;
+      }
+      .btn-primary:hover {
+        background-color: #5e3b9a;
+        border-color: #5e3b9a;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div th:replace="fragments/navbarLogin :: navbarLogin"></div> 
+
+    <!-- Dashboard -->
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <!-- Panel izquierdo: Perfil -->
+        <div class="col-md-3 mb-3">
+          <div class="profile-panel fade-in">
+            <h4 th:text="${usuario.name}">Nombre Alumno</h4>
+            <p th:text="${usuario.email}">correo@ejemplo.com</p>
+            <p>
+              <strong>Rol:</strong>
+              <span th:text="${usuario.role}">Alumno</span>
+            </p>
+            <p>
+              <strong>Usuario:</strong>
+              <span th:text="${usuario.username}">username123</span>
+            </p>
+
+            <a th:href="@{/perfil}" class="btn btn-primary mt-2 w-100"
+              >Editar Perfil</a
+            >
+          </div>
+        </div>
+
+       
+
+        <!-- Panel derecho: Agenda -->
+        <div class="col-md-4 mb-3">
+          <div class="agenda-panel fade-in">
+            <h3>Mi Agenda</h3>
+            <p>Agrega tus notas o eventos:</p>
+            <textarea
+              class="form-control mb-2"
+              rows="10"
+              placeholder="Escribe tus eventos..."
+            ></textarea>
+            <button class="btn btn-primary w-100">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

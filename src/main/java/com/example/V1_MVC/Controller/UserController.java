@@ -42,7 +42,7 @@ public class UserController {
 
     @PostMapping("/guardar")
     public UserModel guardarUsuario(@RequestBody UserModel user) {
-        return userRepository.save(user);
+        return userService.saveUser(user);
     }
 
     
@@ -55,4 +55,7 @@ public class UserController {
         userService.deleteById(id);
         return ResponseEntity.ok(usuario);
     }
+
+
+    
 }

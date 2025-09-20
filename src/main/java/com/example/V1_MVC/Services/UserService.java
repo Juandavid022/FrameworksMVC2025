@@ -12,6 +12,7 @@ public interface UserService {
     UserModel listarId(Long id);
     UserModel saveUser(UserModel user);
     UserDetails loadUserByUsername(String username);
+    UserModel findByUsername(String username); 
     List<UserModel> listar();    
     
 }

@@ -26,7 +26,7 @@ public class CoachModel {
     private String name;
 
     @Column(nullable = false)
-    private String birthday; 
+    private String specialty; 
 
     @Email
     @Column(nullable = false, unique = true)

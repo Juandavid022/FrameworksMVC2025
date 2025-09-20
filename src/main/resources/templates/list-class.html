@@ -27,7 +27,6 @@
                         <tbody>
                             <tr th:each="cl : ${class}">
                                 <td th:text="${cl.id}"></td>
-                                <td th:text="${cl.level}"></td>
                                 <td th:text="${#temporals.format(cl.schedule, 'dd/MM/yyyy HH:mm')}"></td>
                                 <td th:text="${cl.coach.name}"></td>
                             </tr>

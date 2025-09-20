@@ -7,16 +7,20 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
-public class StudentServiceImpl implements StudentService  {
+public class StudentServiceImpl implements StudentService {
 
-@Autowired
+    @Autowired
     private StudentsRepository studentRepository;
 
     @Override
     public List<StudentModel> listar() {
         return studentRepository.findAll();
+    }
+
+    @Override
+    public StudentModel findByEmail(String email) {
+        return studentRepository.findByEmail(email);
     }
 
     @Override
