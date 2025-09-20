@@ -36,8 +36,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // para Postman; en producción habilitar y usar token CSRF
                 .authorizeHttpRequests(authz -> authz
                         // recursos públicos y registro
-                        .requestMatchers("/login", "/", "/mision", "/servicios", "/vision", "/valores", "/students/register","/students/save", "/css/**", "/js/**",
-                                "/images/**")
+                        .requestMatchers("/login", "/", "/mision", "/servicios", "v3/api-docs", "/vision", "/valores", "/students/register","/students/save", "/v3/**","/swagger-ui/**", "/css/**", "/js/**", "/images/**")
                         .permitAll()
 
                         // rutas de coach: permiten COACH y ADMIN

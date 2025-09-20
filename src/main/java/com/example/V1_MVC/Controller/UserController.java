@@ -9,11 +9,14 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "users", description = "Operaciones sobre el manejo y recursos de los usuarios")
+
 @RestController
 @RequestMapping("/api/users")
+@Tag(name = "Usuario", description = "Operaciones para la gestión de los usuarios")
 @CrossOrigin(origins = "*")
 public class UserController {
 
@@ -24,12 +27,14 @@ public class UserController {
 
     
     @GetMapping("/listar")
+    @Operation(summary = "Lista todos los usuarios", description = "Devuelve un listado completo de los usuarios")
     public List<UserModel> listar() {
         return userRepository.findAll();
     }
 
     
     @GetMapping("/{id}")
+    @Operation(summary = "Lista usuario por id", description = "Devuelve un usuario por su id")
     public ResponseEntity<UserModel> obtenerUsuario(@PathVariable Long id) {
         UserModel usuario = userService.listarId(id);
         if (usuario == null) {
@@ -41,12 +46,14 @@ public class UserController {
 
 
     @PostMapping("/guardar")
+    @Operation(summary = "Guardar usuario", description = "Permite guardar un nuevo usuario")
     public UserModel guardarUsuario(@RequestBody UserModel user) {
         return userService.saveUser(user);
     }
 
     
     @DeleteMapping("/delete/{id}")
+    @Operation(summary = "Eliminar usuario", description = "Permite eliminar un usuario por su id")
     public ResponseEntity<UserModel> eliminarUsuario(@PathVariable Long id) {
          UserModel usuario = userService.listarId(id);
         if (usuario == null) {

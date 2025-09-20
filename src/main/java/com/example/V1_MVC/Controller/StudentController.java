@@ -24,10 +24,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Controller
-@Tag(name = "students", description = "Operaciones sobre el manejo y recursos de los estudiantes")
+@Tag(name = "Estudiantes", description = "Operaciones sobre el manejo y recursos de los estudiantes")
 @RequestMapping("/students")
 @CrossOrigin(origins = "*")
 public class StudentController {
@@ -48,12 +49,14 @@ public class StudentController {
     }
 
     @GetMapping("/register")
+    @Operation(summary = "Registro de estudiantes", description = "Permite el registro de nuevos estudiantes en el sistema.")
     public String showForm(Model model) {
         model.addAttribute("studentDTO", new StudentRegistrationDTO());
         return "register-student"; // el nombre del HTML
     }
 
     @GetMapping("/dashboard")
+    @Operation(summary = "Dashbodard", description = "Permite la visualizacion de las clases y notas del estudiante.")
     public String dashboard(Model model, Principal principal) {
 
         if (principal == null) {
@@ -91,12 +94,14 @@ public class StudentController {
     }
 
     @GetMapping("/list")
+    @Operation(summary = "Lista de estudiantes", description = "Muestra la lista de todos los estudiantes registrados en el sistema.")
     public String listar(Model model) {
         model.addAttribute("student", studentService.listar());
         return "list-students";
     }
 
     @PostMapping("/save")
+    @Operation(summary = "Guardar estudiante", description = "Guarda un nuevo estudiante y su usuario asociado en el sistema.")
     public String saveStudent(StudentRegistrationDTO dto, RedirectAttributes redirectAttrs) {
 
         // 1️⃣ Guardar estudiante
@@ -122,6 +127,7 @@ public class StudentController {
     }
 
     @GetMapping("/dashboard/{userId}")
+    @Operation(summary = "Dashbodard por ID", description = "Permite la visualizacion de las clases y notas del estudiante segun su ID.")
     public String dashboard(@PathVariable Long userId, Model model) {
 
         // Obtener estudiante y usuario
