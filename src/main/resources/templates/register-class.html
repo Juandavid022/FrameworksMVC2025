@@ -16,17 +16,6 @@
         <div class="card-body p-4">
             <form th:action="@{/class/save}" th:object="${class}" method="post" class="row g-3">
 
-                <div class="mb-3">
-                    <label for="level" class="form-label">Nivel</label>
-                    <select th:field="*{level}" class="form-select" id="level" required>
-                        <option value="" disabled selected>-- Seleccione un nivel --</option>
-                        <option value="Principiante">Principiante</option>
-                        <option value="Intermedio">Intermedio</option>
-                        <option value="Avanzado">Avanzado</option>
-                        <option value="Niños">Niños</option>
-                    </select>
-                </div>
-
                 <div class="col-12">
                     <label for="schedule" class="form-label">Horario</label>
                     <input type="datetime-local" id="schedule" th:field="*{schedule}" class="form-control" required>

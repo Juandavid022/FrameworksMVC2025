@@ -7,4 +7,5 @@ import com.example.V1_MVC.Model.StudentModel;
 
 @Repository
 public interface StudentsRepository extends JpaRepository<StudentModel, Long> {
+    StudentModel findByEmail(String email);
 }

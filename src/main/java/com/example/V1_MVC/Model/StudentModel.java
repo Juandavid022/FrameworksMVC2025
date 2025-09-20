@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,13 +32,16 @@ public class StudentModel {
     @Column(nullable = false)
     private String genere;
 
-    @Email
-    @Column(nullable = false, unique = true)
-    private String email;
+    @Column(nullable = false, length = 40, unique = true)
+    @Email(message = "Debe ser un correo válido")
+    @NotBlank(message = "El email es obligatorio")
+    String email;
 
     @Column(nullable = false)
     private String phoneNumber;
 
     @Column(nullable = false)
-    private String methodPay;
+    private String status;
+
+
 }
